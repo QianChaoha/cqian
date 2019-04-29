@@ -1,10 +1,11 @@
-package com.cqian.app;
+package com.cqian.app.activity;
 
 import android.Manifest;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 
+import com.cqian.app.R;
 import com.cqian.baselibrary.ioc.OnClick;
 import com.cqian.baselibrary.ioc.ViewById;
 import com.cqian.framelibrary.base.BaseSkinActivity;
@@ -15,7 +16,13 @@ import java.io.File;
 
 import io.reactivex.functions.Consumer;
 
-public class MainActivity extends BaseSkinActivity {
+/**
+ * Description:
+ * Data: 2019/4/29
+ *
+ * @author: cqian
+ */
+public class SkinActivity extends BaseSkinActivity {
     @ViewById(R.id.btChangeSkin)
     Button mBtChangeSkin;
     @ViewById(R.id.btRestoreDefault)
@@ -37,7 +44,7 @@ public class MainActivity extends BaseSkinActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_skin;
     }
 
     @Override
@@ -63,3 +70,4 @@ public class MainActivity extends BaseSkinActivity {
                 });
     }
 }
+
