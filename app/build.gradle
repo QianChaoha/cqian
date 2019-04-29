@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.versions['compileSdkVersion']
+    buildToolsVersion rootProject.ext.versions['buildToolsVersion']
+    defaultConfig {
+        applicationId "com.cqian.app"
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
+        multiDexEnabled true
+    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            shrinkResources false
+//        }
+//        debug {
+//            minifyEnabled false
+//            shrinkResources false
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["design"]
+    //implementation 'android.arch.navigation:navigation-fragment:1.0.0-rc02'
+    //implementation 'android.arch.navigation:navigation-ui:1.0.0-rc02'
+    api project(path: ':framelibrary')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //获取权限
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+}

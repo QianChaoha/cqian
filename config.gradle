@@ -1,0 +1,33 @@
+def supportVersion = "27.1.1"
+def versionName = "1.1.0.0"
+
+def getGitVersion() {
+    def gitHash = 'git rev-parse --short HEAD'
+    //==================升级app后必须要改的配置1.0====================
+    return gitHash.execute().text.trim()
+}
+
+def gitVersionCode() {
+    return 1
+}
+
+ext {
+    versions = [
+            "compileSdkVersion"  : 27,
+            "buildToolsVersion"  : '27.0.3',
+            "minSdkVersion"      : 21,
+            "targetSdkVersion"   : 26,
+            "versionCode"        : gitVersionCode(),
+            "versionName"        : versionName + "-" + getGitVersion(),
+            "officialVersionName": versionName,
+            "supportVersion"     : supportVersion
+
+    ]
+
+    dependencies = [
+            "support-v4"  : "com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7": "com.android.support:appcompat-v7:${supportVersion}",
+            "okhttp"      : "com.squareup.okhttp3:okhttp:3.10.0",
+            "design"      : "com.android.support:design:${supportVersion}",
+    ]
+}
