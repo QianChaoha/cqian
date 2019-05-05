@@ -10,11 +10,14 @@ import com.cqian.framelibrary.base.BaseSkinActivity;
 public class MainActivity extends BaseSkinActivity {
 
 
-    @OnClick({R.id.btChangeSkin})
+    @OnClick({R.id.btChangeSkin,R.id.btNetwork})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btChangeSkin:
                 startActivity(new Intent(this, SkinActivity.class));
+                break;
+            case R.id.btNetwork:
+                startActivity(new Intent(this, NetWorkActivity.class));
                 break;
         }
     }

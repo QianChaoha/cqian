@@ -1,2 +1,2 @@
-include ':app', ':baselibrary', ':skin','framelibrary'
+include ':app', ':baselibrary', ':skin', 'framelibrary', 'okhttp'
 
